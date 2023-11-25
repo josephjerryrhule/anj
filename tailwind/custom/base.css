@@ -21,7 +21,7 @@ html.lenis {
 }
 
 body {
-	@apply bg-anjblack text-anjwhite font-helvetica;
+	@apply bg-black text-anjwhite font-helvetica;
 }
 
 h1,
