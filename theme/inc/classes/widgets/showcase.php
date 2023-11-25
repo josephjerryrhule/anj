@@ -88,6 +88,17 @@ class showcase extends Widget_Base
       ]
     );
 
+    $repeater->add_control(
+      'defimage',
+      [
+        'label' => esc_html__('Choose Thumbnail', 'anj'),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+          'url' => \Elementor\Utils::get_placeholder_image_src(),
+        ],
+      ]
+    );
+
     $this->add_control(
       'list',
       [
@@ -127,6 +138,7 @@ class showcase extends Widget_Base
           $excerpt = $item['excerpt'];
           $domain = $item['domain'];
           $image = $item['image']['url'];
+          $thumbnail = $item['defimage']['url'];
         ?>
           <a href="<?php echo esc_url($domain); ?>" target="_blank">
             <div class="max-w-full relative group cursor-pointer anjshowcase-item-<?php echo $index; ?>">
@@ -147,8 +159,14 @@ class showcase extends Widget_Base
               </div>
               <div class="absolute top-[97.03px] left-[47.89px] md:top-[288.12px] md:left-[141.57px] anjanimatedimage-area h-[135px] md:h-[400.795px] overflow-clip">
                 <div class="max-w-[233.563px] md:max-w-[722.525px]">
-                  <img src="<?php echo esc_url($image); ?>" alt="<?php echo $title; ?>" class="!w-full" />
+                  <style>
+                    .anj-gif-<?php echo $index; ?>:hover {
+                      content: url('<?php echo esc_url($image); ?>');
+                    }
+                  </style>
+                  <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo $title; ?>" class="!w-full anj-gif-<?php echo $index; ?>" />
                 </div>
+
               </div>
             </div>
           </a>
@@ -160,6 +178,15 @@ class showcase extends Widget_Base
       <script>
         // Output the data from PHP into a JavaScript variable
         var showcaseData = <?php echo json_encode($list); ?>;
+        document.addEventListener('DOMContentLoaded', () => {
+          const gifs = document.querySelectorAll('.anj-gif-<?php echo $index; ?>');
+
+          gifs.forEach((gif) => {
+            gif.addEventListener('mouseleave', () => {
+              gif.src = gif.src; // This will reset the GIF animation on mouse leave
+            });
+          });
+        });
       </script>
 <?php
     endif;
