@@ -17,6 +17,7 @@ module.exports = {
 				aeonik: ['Aeonik'],
 				helvetica: ['Helvetica'],
 				neuegrotesk: ['Neue Grotesk'],
+				oswald: ['Oswald'],
 			},
 			colors: {
 				anjblack: '#020212',

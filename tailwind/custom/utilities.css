@@ -6,3 +6,9 @@
  *
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
+
+.anjpreloader-area.anjtrans-up {
+	transform: translateY(-100%);
+	opacity: 0;
+	z-index: 0;
+}

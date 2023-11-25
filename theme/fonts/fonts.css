@@ -26,3 +26,8 @@
   src: url('./Fontspring-DEMO-neuealtegrotesk-light.otf');
   font-weight: 300;
 }
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('./Oswald-Bold.ttf');
+}
