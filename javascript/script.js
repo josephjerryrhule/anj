@@ -8,6 +8,7 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
+
 gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis();
@@ -40,7 +41,27 @@ jQuery(document).ready(($) => {
 			percentage++;
 			if (percentage > 100) {
 				clearInterval(interval);
+				// Add class 'anjtrans-up' to 'anjpreloader-area' once the percentage reaches 100
+				$('.anjpreloader-area').addClass('anjtrans-up');
 			}
 		}, 0.00001); // You can adjust the interval as needed
+	});
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	const tl = gsap.timeline();
+
+	showcaseData.forEach((item, index) => {
+		tl.from('.anjshowcase-item-' + index, {
+			scrollTrigger: {
+				trigger: '.anjshowcase-item-' + index,
+				start: 'top center',
+				end: 'bottom center',
+				scrub: true,
+				duration: 3,
+			},
+			opacity: 0,
+			y: 50,
+		});
 	});
 });

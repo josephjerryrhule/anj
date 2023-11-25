@@ -127,7 +127,7 @@ class showcase extends Widget_Base
           $domain = $item['domain'];
           $image = $item['image']['url'];
         ?>
-          <div class="max-w-full md:max-w-[1062px] relative">
+          <div class="max-w-full md:max-w-[1062px] relative anjshowcase-item-<?php echo $index; ?>">
             <img src="<?php echo esc_url($browserframe); ?>" alt="Google Chrome Browser Frame" class="!w-full" />
             <div class="absolute top-[23.67px] left-[44.37px] md:top-[74.42px] md:left-[131.61px] text-anjwhite anjdomain-area text-[3.408px] md:text-[10.11px] tracking-[0.181px] font-normal">
               <span><?php echo __($domain, 'anj'); ?></span>
@@ -152,6 +152,11 @@ class showcase extends Widget_Base
         endforeach;
         ?>
       </div>
+
+      <script>
+        // Output the data from PHP into a JavaScript variable
+        var showcaseData = <?php echo json_encode($list); ?>;
+      </script>
 <?php
     endif;
   }
