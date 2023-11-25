@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Aeonik';
+  src: url('./AeonikTRIAL-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./Helvetica.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./Helvetica-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Neue Grotesk';
+  src: url('./Fontspring-DEMO-neuealtegrotesk-book.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Neue Grotesk';
+  src: url('./Fontspring-DEMO-neuealtegrotesk-light.otf');
+  font-weight: 300;
+}
