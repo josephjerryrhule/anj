@@ -9,18 +9,6 @@
  * https://esbuild.github.io/
  */
 
-gsap.registerPlugin(ScrollTrigger);
-
-const lenis = new Lenis();
-
-lenis.on('scroll', ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-	lenis.raf(time * 1000);
-});
-
-gsap.ticker.lagSmoothing(0);
-
 jQuery(document).ready(($) => {
 	// Wait for the page to fully load
 	$(window).on('load', function () {
@@ -48,6 +36,18 @@ jQuery(document).ready(($) => {
 	});
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
+const lenis = new Lenis();
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+	lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
 document.addEventListener('DOMContentLoaded', () => {
 	const tl = gsap.timeline();
 
@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				start: 'top center',
 				end: 'bottom center',
 				scrub: true,
-				duration: 3,
 			},
 			opacity: 0,
 			y: 50,
