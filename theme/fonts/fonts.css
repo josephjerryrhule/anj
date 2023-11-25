@@ -17,13 +17,13 @@
 
 @font-face {
   font-family: 'Neue Grotesk';
-  src: url('./Fontspring-DEMO-neuealtegrotesk-book.otf');
+  src: url('./NeueHaasDisplayRoman.ttf');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Neue Grotesk';
-  src: url('./Fontspring-DEMO-neuealtegrotesk-light.otf');
+  src: url('./NeueHaasDisplayLight.ttf');
   font-weight: 300;
 }
 
