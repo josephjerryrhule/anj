@@ -51,10 +51,12 @@ gsap.ticker.lagSmoothing(0);
 document.addEventListener('DOMContentLoaded', () => {
 	const tl = gsap.timeline();
 
-	showcaseData.forEach((item, index) => {
-		tl.from('.anjshowcase-item-' + index, {
+	let panels = gsap.utils.toArray('.anjshowcase-item');
+
+	panels.forEach((item, i) => {
+		tl.from(item, {
 			scrollTrigger: {
-				trigger: '.anjshowcase-item-' + index,
+				trigger: item,
 				start: 'top center',
 				end: 'bottom center',
 				scrub: true,

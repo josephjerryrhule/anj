@@ -141,7 +141,7 @@ class showcase extends Widget_Base
           $thumbnail = $item['defimage']['url'];
         ?>
           <a href="<?php echo esc_url($domain); ?>" target="_blank">
-            <div class="max-w-full relative group cursor-pointer anjshowcase-item-<?php echo $index; ?>">
+            <div class="max-w-full relative group cursor-pointer anjshowcase-item">
               <img src="<?php echo esc_url($browserframe); ?>" alt="Google Chrome Browser Frame" class="!w-full opacity-100 transition-all duration-300 ease-in-out group-hover:opacity-0" />
               <img src="<?php echo esc_url($browserframehover); ?>" alt="Google Chrome Browser Frame" class="!w-full absolute top-0 transition-all duration-300 ease-in-out group-hover:opacity-100 opacity-0" />
               <div class="absolute top-[23.67px] left-[44.37px] md:top-[74.42px] md:left-[131.61px] text-anjwhite anjdomain-area text-[3.408px] md:text-[10.11px] tracking-[0.181px] font-normal">
@@ -176,8 +176,6 @@ class showcase extends Widget_Base
       </div>
 
       <script>
-        // Output the data from PHP into a JavaScript variable
-        var showcaseData = <?php echo json_encode($list); ?>;
         document.addEventListener('DOMContentLoaded', () => {
           const gifs = document.querySelectorAll('.anj-gif-<?php echo $index; ?>');
 
