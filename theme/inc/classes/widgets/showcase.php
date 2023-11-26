@@ -140,8 +140,8 @@ class showcase extends Widget_Base
           $image = $item['image']['url'];
           $thumbnail = $item['defimage']['url'];
         ?>
-          <a href="<?php echo esc_url($domain); ?>" target="_blank">
-            <div class="max-w-full relative group cursor-pointer anjshowcase-item">
+          <div class="max-w-full relative group cursor-pointer anjshowcase-item">
+            <a href="<?php echo esc_url($domain); ?>" target="_blank">
               <img src="<?php echo esc_url($browserframe); ?>" alt="Google Chrome Browser Frame" class="!w-full opacity-100 transition-all duration-300 ease-in-out group-hover:opacity-0" />
               <img src="<?php echo esc_url($browserframehover); ?>" alt="Google Chrome Browser Frame" class="!w-full absolute top-0 transition-all duration-300 ease-in-out group-hover:opacity-100 opacity-0" />
               <div class="absolute top-[23.67px] left-[44.37px] md:top-[74.42px] md:left-[131.61px] text-anjwhite anjdomain-area text-[3.408px] md:text-[10.11px] tracking-[0.181px] font-normal">
@@ -149,9 +149,7 @@ class showcase extends Widget_Base
               </div>
               <div class="absolute top-[35.18px] md:top-[125.13px] left-[26.29px] md:left-[36.13px] text-anjwhite anjtitle-area md:text-left text-center max-w-full font-neuegrotesk">
                 <h2 class="text-[12px] md:text-[32px] font-semibold underline">
-                  <a href="<?php echo esc_url($domain); ?>" target="_blank">
-                    <?php echo __($title, 'anj'); ?>
-                  </a>
+                  <?php echo __($title, 'anj'); ?>
                 </h2>
                 <p class="text-[#ccc] text-[8px] md:text-[18px] tracking-[0.36px] leading-[19.8px] font-light">
                   <?php echo __($excerpt, 'anj'); ?>
@@ -168,8 +166,8 @@ class showcase extends Widget_Base
                 </div>
 
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         <?php
         endforeach;
         ?>
