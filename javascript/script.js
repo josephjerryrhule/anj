@@ -36,6 +36,16 @@ jQuery(document).ready(($) => {
 	});
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+	const mHam = document.querySelector('.anjham');
+	const mMenu = document.querySelector('.anjmobilenav-items');
+
+	mHam.addEventListener('click', () => {
+		mHam.classList.toggle('active');
+		mMenu.classList.toggle('active');
+	});
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis();

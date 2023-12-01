@@ -20,7 +20,7 @@ module.exports = {
 				oswald: ['Oswald'],
 			},
 			colors: {
-				anjblack: '#020212',
+				anjblack: '#101010',
 				anjwhite: '#F2F0EF',
 			},
 		},

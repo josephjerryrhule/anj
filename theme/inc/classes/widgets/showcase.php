@@ -131,7 +131,7 @@ class showcase extends Widget_Base
     $browserframehover = ANJ_DIR_URI . '/inc/assets/browserframehover.svg';
     if ($list) :
 ?>
-      <div class="anjshowcase-section relative w-full flex flex-col items-center gap-[60px] md:gap-[50px]">
+      <div class="anjshowcase-section relative w-full flex flex-col items-center gap-[40px] md:gap-[48px]">
         <?php
         foreach ($list as $index => $item) :
           $title = $item['title'];
@@ -140,33 +140,48 @@ class showcase extends Widget_Base
           $image = $item['image']['url'];
           $thumbnail = $item['defimage']['url'];
         ?>
-          <div class="max-w-full relative group cursor-pointer anjshowcase-item">
-            <a href="<?php echo esc_url($domain); ?>" target="_blank">
-              <img src="<?php echo esc_url($browserframe); ?>" alt="Google Chrome Browser Frame" class="!w-full opacity-100 transition-all duration-300 ease-in-out group-hover:opacity-0" />
-              <img src="<?php echo esc_url($browserframehover); ?>" alt="Google Chrome Browser Frame" class="!w-full absolute top-0 transition-all duration-300 ease-in-out group-hover:opacity-100 opacity-0" />
-              <div class="absolute top-[23.67px] left-[44.37px] md:top-[74.42px] md:left-[131.61px] text-anjwhite anjdomain-area text-[3.408px] md:text-[10.11px] tracking-[0.181px] font-normal">
-                <span><?php echo __($domain, 'anj'); ?></span>
-              </div>
-              <div class="absolute top-[35.18px] md:top-[125.13px] left-[26.29px] md:left-[36.13px] text-anjwhite anjtitle-area md:text-left text-center max-w-full font-neuegrotesk">
-                <h2 class="text-[12px] md:text-[32px] font-semibold underline">
-                  <?php echo __($title, 'anj'); ?>
-                </h2>
-                <p class="text-[#ccc] text-[8px] md:text-[18px] tracking-[0.36px] leading-[19.8px] font-light">
-                  <?php echo __($excerpt, 'anj'); ?>
-                </p>
-              </div>
-              <div class="absolute top-[97.03px] left-[47.89px] md:top-[288.12px] md:left-[141.57px] anjanimatedimage-area h-[135px] md:h-[400.795px] overflow-clip">
-                <div class="max-w-[233.563px] md:max-w-[722.525px]">
-                  <style>
-                    .anj-gif-<?php echo $index; ?>:hover {
-                      content: url('<?php echo esc_url($image); ?>');
-                    }
-                  </style>
-                  <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo $title; ?>" class="!w-full anj-gif-<?php echo $index; ?>" />
-                </div>
+          <div class="max-w-full w-full relative group cursor-pointer anjshowcase-item rounded-3xl border border-[#F2F2F20D] bg-[#F2F2F20A] overflow-clip p-2">
+            <div class="absolute top-0 bg-linearshowcase w-full h-[1px]"></div>
 
+            <div class="w-full rounded-2xl border border-[#3d3d3d] relative p-[37px_33px_0px] bg-linearshowcasecontainer overflow-clip">
+              <div class="absolute top-0 bg-linearshowcase w-full h-[1px]"></div>
+              <div class="w-full flex items-start justify-between">
+                <div class="flex flex-col text-[#F2F2F2] font-neuegrotesk gap-[11px]">
+                  <h2 class="font-neuegrotesk text-[12px] md:text-[24px] font-medium leading-6">
+                    <?php echo __($title, 'anj'); ?>
+                  </h2>
+                  <p class="text-[13.477px] md:text-base font-normal text-[#F2F2F2CC]">
+                    <?php echo __($excerpt, 'anj'); ?>
+                  </p>
+                </div>
+                <span>
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_412_55615)">
+                      <g clip-path="url(#clip1_412_55615)">
+                        <path d="M18.6997 23.9344L17.2663 22.5344L22.8663 16.9344H5.33301V14.9344H22.8663L17.233 9.30103L18.6663 7.90103L26.6997 15.9344L18.6997 23.9344Z" fill="#F2F2F2" />
+                      </g>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_412_55615">
+                        <rect width="32" height="32" fill="white" />
+                      </clipPath>
+                      <clipPath id="clip1_412_55615">
+                        <rect width="32" height="32" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
               </div>
-            </a>
+
+              <div class="p-[31px_24px_0px] md:p-[65px_81.11px_0px] flex items-center justify-center">
+                <style>
+                  .anjshowcase-item:hover .anj-gif-<?php echo $index; ?> {
+                    content: url('<?php echo esc_url($image); ?>');
+                  }
+                </style>
+                <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo $title; ?>" class="max-w-full !h-full md:!h-[559px] object-cover w-full object-top anj-gif-<?php echo $index; ?>" />
+              </div>
+            </div>
           </div>
         <?php
         endforeach;

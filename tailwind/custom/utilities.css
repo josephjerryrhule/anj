@@ -12,3 +12,111 @@
 	opacity: 0;
 	z-index: 0;
 }
+
+.anj-menu .menu-item {
+	padding: 16px 24px;
+	border-radius: 32px;
+	transition: all 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+	background: #1c1c1c;
+}
+
+.menu-item a {
+	display: flex;
+	align-items: center;
+}
+
+.menu-item a::after {
+	content: ""; /* Required for the pseudo-element to be generated */
+	display: inline-block;
+	width: 18px; /* Set your desired width */
+	height: 18px; /* Set your desired height */
+	margin-left: 10px; /* Adjust spacing as needed */
+
+	background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.7875 15L3 14.2125L12.3375 4.875H6.825V3.75H14.25V11.175H13.125V5.6625L3.7875 15Z' fill='%23F2F2F2'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-size: cover; /* Ensure the SVG covers the specified dimensions */
+}
+
+.anj-workpill-glow {
+	border-radius: 2px;
+	background: #f2f2f2;
+	box-shadow: 0px 2px 25px 2px #ffffff;
+}
+
+.bg-linearshowcase {
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0) 5%,
+		rgba(255, 255, 255, 0.8) 35%,
+		#fff 50%,
+		rgba(255, 255, 255, 0.8) 65%,
+		rgba(0, 0, 0, 0) 95%
+	);
+}
+
+.bg-linearshowcasecontainer {
+	background: linear-gradient(194.61deg, #252525 0%, #101010 100%),
+		linear-gradient(0deg, #3d3d3d, #3d3d3d);
+}
+
+/* Set Border Radius to 0px */
+::-webkit-scrollbar {
+	width: 1px;
+	border-radius: 0; /* Set border radius to 0px */
+}
+
+/* Apply Linear Gradient along Scroll Track */
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Change Scroll Handle Color */
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0) 15%,
+		#ffffff 50%,
+		rgba(0, 0, 0, 0) 85%
+	); /* Set your desired color */
+}
+
+/* Change Scroll Handle on Hover Color */
+::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0) 15%,
+		#ffffff 50%,
+		rgba(0, 0, 0, 0) 85%
+	); /* Set your desired color on hover */
+}
+
+.anjmobilenav-items {
+	background: linear-gradient(
+			0deg,
+			rgba(242, 242, 242, 0.1),
+			rgba(242, 242, 242, 0.1)
+		),
+		linear-gradient(
+			0deg,
+			rgba(242, 242, 242, 0.05),
+			rgba(242, 242, 242, 0.05)
+		);
+	border: 1px solid #f2f2f21a;
+	box-shadow: 0px 12px 30px 0px #00000033;
+}
+
+.anjham.active .open {
+	opacity: 0;
+}
+
+.anjham.active .close {
+	opacity: 100%;
+}
+
+.anjmobilenav-items.active {
+	opacity: 100%;
+	transform: translateY(0%);
+}
